@@ -7,9 +7,10 @@ package toDoEJB;
 import java.util.List;
 import javax.ejb.Local;
 
+
 /**
  *
- * @author HD
+ * @author muratmenevse
  */
 @Local
 public interface ListUserControllerLocal {
@@ -18,4 +19,5 @@ public interface ListUserControllerLocal {
     public void delete(toDoEJB.ListUser u);
     public List<toDoEJB.ListUser> list();
     public boolean checkName(java.lang.String username);
+    public boolean checkLogin(java.lang.String username, java.lang.String password);
 }

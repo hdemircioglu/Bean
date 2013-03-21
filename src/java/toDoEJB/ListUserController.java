@@ -13,7 +13,7 @@ import javax.persistence.Query;
 
 /**
  *
- * @author HD
+ * @author muratmenevse
  */
 @Stateless
 public class ListUserController implements ListUserControllerLocal {
@@ -45,7 +45,22 @@ public class ListUserController implements ListUserControllerLocal {
     @Override
     public boolean checkName(String username){
         Query findAll;
-        findAll = em.createQuery("SELECT u FROM ListUser as u WHERE u.username LIKE '" + username + "'");
+        findAll = em.createQuery("SELECT u FROM ListUser as u WHERE u.username "
+                + "LIKE '" + username + "'");
+        return findAll.getResultList().isEmpty();
+    }
+    
+    /**
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public boolean checkLogin(String username, String password){
+        Query findAll;
+        findAll = em.createQuery("SELECT u FROM ListUser as u WHERE u.username "
+                + "LIKE '" + username + "' AND u.password LIKE '" + password + "'");
         return findAll.getResultList().isEmpty();
     }
     
