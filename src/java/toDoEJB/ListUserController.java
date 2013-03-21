@@ -4,6 +4,7 @@
  */
 package toDoEJB;
 
+
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -31,7 +32,7 @@ public class ListUserController implements ListUserControllerLocal {
     @Override
     public void delete(ListUser u){
         ListUser managedU = em.merge(u);
-        em.remove(u);
+        em.remove(managedU);
     }
 
     @Override
@@ -40,4 +41,13 @@ public class ListUserController implements ListUserControllerLocal {
         findAll = em.createQuery("SELECT u FROM ListUser as u");
         return findAll.getResultList();
     }
+    
+    @Override
+    public boolean checkName(String username){
+        Query findAll;
+        findAll = em.createQuery("SELECT u FROM ListUser as u WHERE u.username LIKE '" + username + "'");
+        return findAll.getResultList().isEmpty();
+    }
+    
+    
 }

@@ -17,5 +17,5 @@ public interface ListUserControllerLocal {
     public void add(toDoEJB.ListUser u);
     public void delete(toDoEJB.ListUser u);
     public List<toDoEJB.ListUser> list();
-    
+    public boolean checkName(java.lang.String username);
 }
