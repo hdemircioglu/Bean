@@ -60,7 +60,7 @@ public class ListUserController implements ListUserControllerLocal {
     public boolean checkLogin(String username, String password){
         Query findAll;
         findAll = em.createQuery("SELECT u FROM ListUser as u WHERE u.username "
-                + "LIKE '" + username + "' AND u.password LIKE '" + password + "'");
+                + "LIKE '" + username + "' AND  u.password LIKE '" + password + "'");
         return findAll.getResultList().isEmpty();
     }
     
