@@ -5,12 +5,11 @@
 package toDoEJB;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
+
 
 /**
  *
@@ -25,17 +24,16 @@ public class ListUser implements Serializable {
     
     private String username;
     private String password;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date creationTime;
+
     
     public ListUser(){
         
     }
     
-    public ListUser(String username, String password, Date date){
+    public ListUser(String username, String password){
         this.username = username;
         this.password = password;
-        creationTime = date;
+        
         
     }
 
@@ -53,14 +51,6 @@ public class ListUser implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Date getCreationTime() {
-        return creationTime;
-    }
-
-    public void setCreationTime(Date creationTime) {
-        this.creationTime = creationTime;
     }
 
     public Long getId() {

@@ -31,7 +31,7 @@ public class ListUserController implements ListUserControllerLocal {
     @Override
     public void delete(ListUser u){
         ListUser managedU = em.merge(u);
-        em.remove(u);
+        em.remove(managedU);
     }
 
     @Override
