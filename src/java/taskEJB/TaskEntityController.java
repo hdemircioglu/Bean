@@ -39,6 +39,13 @@ public class TaskEntityController implements TaskEntityControllerLocal {
         TaskEntity managedU = em.merge(t);
         em.remove(managedU);
     }
+    
+    
+    @Override
+    public void update(TaskEntity t){
+        TaskEntity managedU = em.merge(t);
+        em.refresh(managedU);
+    }
 
     /**
      *
@@ -49,5 +56,7 @@ public class TaskEntityController implements TaskEntityControllerLocal {
         Query findAll;
         findAll = em.createQuery("SELECT t FROM TaskEntity as t");
         return findAll.getResultList();
-    } 
+    }
+    
+   
 }
