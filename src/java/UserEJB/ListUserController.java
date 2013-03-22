@@ -21,7 +21,7 @@ public class ListUserController implements ListUserControllerLocal {
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
     
-    @PersistenceContext(unitName = "ToDoEJBPU")
+    @PersistenceContext(unitName = "UserEJBPU")
     private EntityManager em;
     
     @Override
