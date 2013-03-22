@@ -13,7 +13,11 @@ public interface TaskEntityControllerLocal {
     public void add(taskEJB.TaskEntity t);
 
     public void delete(taskEJB.TaskEntity t);
+    
+    public void update(taskEJB.TaskEntity t);
 
     public java.util.List<taskEJB.TaskEntity> list();
+
+    
     
 }
