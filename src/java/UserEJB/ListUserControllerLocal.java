@@ -20,4 +20,5 @@ public interface ListUserControllerLocal {
     public List<UserEJB.ListUser> list();
     public boolean checkName(java.lang.String username);
     public boolean checkLogin(java.lang.String username, java.lang.String password);
+    public java.util.List<java.lang.String> usernamesList();
 }

@@ -43,6 +43,13 @@ public class ListUserController implements ListUserControllerLocal {
     }
     
     @Override
+    public List<String> usernamesList() {
+        Query findAll;
+        findAll = em.createQuery("SELECT u.username FROM ListUser as u");
+        return findAll.getResultList();
+    }
+    
+    @Override
     public boolean checkName(String username){
         Query findAll;
         findAll = em.createQuery("SELECT u FROM ListUser as u WHERE u.username "
